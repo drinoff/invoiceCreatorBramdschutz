@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -204,4 +205,212 @@
     </style>
 </body>
 
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <header class="header">
+        <div>
+            <h1 class="person">
+                <input type="text" placeholder="Name..." class="details-input-style">
+            </h1>
+            <p class="person p">
+                <input type="text" placeholder="Address..." class="details-input-style">
+            </p>
+            <p class="person p">
+                <label for="steuer Nummer">St. Nr.: </label>
+                <input type="text" class="details-input-style">
+            </p>
+            <p class="person p">
+                <label for="mobil">Mobil: </label>
+                <input type="phone" class="details-input-style">
+            </p>
+        </div>
+        <div>
+            <h1 class="industrieMontage imon2">Industriemontagen</h1>
+            <h1 class="industrieMontage ">Trockenbau</h1>
+        </div>
+    </header>
+    <main class="main">
+
+        <article class="firma">
+            <p><strong>Sezgin Eyub</strong></p>
+            <p><strong>Heckerdamm 239</strong></p>
+            <p><strong>13627, Berlin</strong></p>
+        </article>
+
+        <article class="invoice-details">
+            <p>
+                <label for="invoiceNumber">Rechnungsnummer: </label>
+                <input type="text" class="details-input-style">
+            </p>
+            <p>
+                <label for="invoiceDate">Rechnungsdatum: </label>
+                <input type="date" class="details-input-style">
+            </p>
+            <p>
+                <label for="leistung">Leistungszeitraum: </label>
+                <input type="text" class="details-input-style">
+            </p>
+            <p>
+                <label for="bv">BV: </label>
+                <input type="text" class="details-input-style">
+            </p>
+            <p>
+                <input type="text" placeholder="Strasse..." class="details-input-style">
+            </p>
+            <p>
+                <input type="text" placeholder="Ort/PLZ..." class="details-input-style">
+            </p>
+            <p>
+            <p>
+                <label for="ProjNumm">Projekt Nr.: </label>
+                <input type="text" class="details-input-style">
+            </p>
+            </p>
+        </article>
+
+        <h1 class="rechnung">R E C H N U N G</h1>
+        <table class="table">
+            <tr>
+                <th>Pos.</th>
+                <th>Beschreibung</th>
+                <th>Menge/Stunde</th>
+                <th>Preis</th>
+                <th>Gesamtpreis</th>
+            </tr>
+        </table>
+        <table class="table-body">
+            <tr>
+                <th><input type="number" class="leistung-details"></th>
+                <th>
+                    <select name="" id="">
+                        <option value="">Stahlträger Verkleidung</option>
+                        <option value="">Einbau Promat Kanal</option>
+                        <option value="">Erschwerte Montage</option>
+                        <option value="">Verschottungen</option>
+                        <option value="">Blech Kanal Verkleidung</option>
+                        <option value="">Baustelleneinrichtung</option>
+                        <option value="">Demontage Promat Kanal</option>
+                    </select>
+                </th>
+                <th><input type="number" class="leistung-details"></th>
+                <th><input type="number" class="leistung-details"></th>
+                <th><input type="number" class="leistung-details"></th>
+            </tr>
+        </table>
+
+
+
+        <article class="footer">
+            <p>Gemaß § 19 Umsatzsteuergesetz ohne USt.</p>
+            <p>Bitte überweisen Sie den Rechnungsbetrag auf das angegebene Konto.</p>
+            <p>Berliner Sparkasse</p>
+            <p><strong>IBAN: DE15 1005 0000 1066 8126 71 BIC: BELADEBE</strong></p>
+            <p>Kontoinhaber: Mehmet Ismail</p>
+            <p>Mit freundlichen Grüßen</p>
+        </article>
+    </main>
+
+
+    <style>
+        .body {
+            display: flex;
+            justify-content: center;
+            box-sizing: border-box;
+            width: 1000px;
+        }
+
+        * {
+            box-sizing: inherit;
+        }
+
+        .header {
+            border: 1px solid black;
+            margin: 60px 30px 0px 30px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .person {
+            margin-left: 20px;
+            font-size: 24px;
+        }
+
+        .industrieMontage {
+            margin-right: 20px;
+            font-size: 24px;
+            margin-bottom: 2px;
+            margin-top: 2px;
+        }
+
+        .p {
+            font-size: 14px;
+            margin-bottom: 2px;
+            margin-top: 2px;
+        }
+
+        .main {
+            border: 1px solid black;
+            margin: 0px 30px 0px 30px;
+            width: inherit;
+        }
+
+        .firma {
+            margin-left: 20px;
+            font-size: 16px;
+            margin-top: 60px;
+        }
+
+        .firma p {
+            margin-top: 2px;
+            margin-bottom: 2px;
+        }
+
+        .imon2 {
+            margin-top: 16px;
+        }
+
+        .invoice-details {
+            margin-top: 100px;
+            margin-left: 20px;
+        }
+
+        .rechnung {
+            margin-left: 20px;
+            font-size: 32px;
+            font-weight: 100;
+            margin-top: 80px;
+        }
+
+
+        .table,
+        .table-body {
+            width: 944px;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+        }
+
+        .table-body tr th {
+            font-weight: 100;
+        }
+
+
+
+        .footer {
+            margin-top: 50px;
+            margin-left: 20px;
+        }
+    </style>
+</body>
+
+>>>>>>> d6a2bd39fc36c6cdf688041da4a0c90ece4ee580
 </html>
