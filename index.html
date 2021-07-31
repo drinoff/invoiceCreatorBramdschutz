@@ -42,25 +42,25 @@
             <article class="invoice-details">
                 <p>
                     <label for="invoiceNumber">Rechnungsnummer: </label>
-                    <input type="text" class="details-input-style">
+                    <input type="text" class="details-input-style invoice-details-print">
                 </p>
                 <p>
                     <label for="invoiceDate">Rechnungsdatum: </label>
-                    <input type="date" class="details-input-style">
+                    <input type="date" class="details-input-style invoice-details-print">
                 </p>
                 <p>
                     <label for="leistung">Leistungszeitraum: </label>
-                    <input type="text" class="details-input-style">
+                    <input type="text" class="details-input-style invoice-details-print">
                 </p>
                 <p>
                     <label for="bv">BV: </label>
-                    <input type="text" class="details-input-style">
+                    <input type="text" class="details-input-style invoice-details-print">
                 </p>
                 <p>
-                    <input type="text" placeholder="Strasse..." class="details-input-style">
+                    <input type="text" placeholder="Strasse..." class="details-input-style invoice-details-print">
                 </p>
                 <p>
-                    <input type="text" placeholder="Ort/PLZ..." class="details-input-style">
+                    <input type="text" placeholder="Ort/PLZ..." class="details-input-style invoice-details-print">
                 </p>
                 <p>
                 <p>
@@ -76,14 +76,14 @@
             <tr>
                 <th>Pos.</th>
                 <th>Beschreibung</th>
-                <th>Menge</th>
+                <th>Menge </th>
                 <th>Preis</th>
                 <th>Gesamtpreis</th>
             </tr>
             <tr id="position" class="position">
                 <th><input type="number" class="leistung-details pos"></th>
                 <th>
-                    <select name="" id="">
+                    <select name="" id="" class="description">
                         <option value="">Stahlträger Verkleidung</option>
                         <option value="">Einbau Promat Kanal</option>
                         <option value="">Erschwerte Montage</option>
@@ -93,7 +93,13 @@
                         <option value="">Demontage Promat Kanal</option>
                     </select>
                 </th>
-                <th><input type="text" class="leistung-details menge"></th>
+                <th>
+                    <input type="text" class="leistung-details menge">
+                    <select name="menge-opt" id="menge-opt">
+                        <option value="">m&sup2;</option>
+                        <option value="std">std.</option>
+                    </select>
+                </th>
                 <th><input type="number" class="leistung-details price"></th>
                 <th><input type="text" class="leistung-details gesamt"></th>
                 <th>
@@ -104,16 +110,29 @@
         <button id='addPos' class="addPos">+</button>
 
 
+        <div class='endBetrag'>
+            <p class="summeAlone">Summe:</p>
+            <input type="text" class="summe">
+        </div>
+
+
+        <div class='endBetrag'>
+            <p>Gesamtbetrag:</p>
+            <input type="text" class="gesamtBetrag">
+        </div>
+
 
 
         <article class="footer">
             <p>Gemaß § 19 Umsatzsteuergesetz ohne USt.</p>
             <p>Bitte überweisen Sie den Rechnungsbetrag auf das angegebene Konto.</p>
             <p>Berliner Sparkasse</p>
-            <p><strong>IBAN: DE15 1005 0000 1066 8126 71 BIC: BELADEBE</strong></p>
-            <p>Kontoinhaber: Mehmet Ismail</p>
+            <p><strong>IBAN: <input type="text" class="iban"> BIC: <input type="text" class="bic"></strong></p>
+            <p>Kontoinhaber: <input type="text" class="name-end"></p>
             <p>Mit freundlichen Grüßen</p>
+            <button class="print">PRINT</button>
         </article>
+
     </main>
 
 
@@ -159,7 +178,8 @@
             margin: 0px 30px 0px 30px;
             width: inherit;
         }
-        .firma-invoice{
+
+        .firma-invoice {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
@@ -183,10 +203,15 @@
         .invoice-details {
             margin-top: 40px;
             margin-right: 20px;
+            
         }
-        .invoice-details p{
+
+        .invoice-details p {
             margin-bottom: 2px;
             margin-top: 2px;
+        }
+        .details-input-style{
+            width: 35%;
         }
 
         .rechnung {
@@ -210,7 +235,13 @@
 
         .leistung-details {
             width: 60%;
+            text-align: center;
         }
+
+        .menge {
+            width: 40%;
+        }
+
 
         .addPos {
             margin-left: 50%;
@@ -240,12 +271,138 @@
 
         }
 
+        .endBetrag {
+            display: flex;
+            justify-content: flex-end;
+            font-weight: bold;
+            
+        }
+        .endBetrag p.summeAlone{
+            font-weight: normal;
+        }
+        .summe{
+            width: 80px;
+            height: 20px;
+            margin-top: 15px;
+            margin-right: 100px;
+            
+            font-size: 14px;
+            margin-left: 5px;
+        }
+        .gesamtBetrag
+        {
+            width: 80px;
+            height: 20px;
+            margin-top: 15px;
+            margin-right: 100px;
+            font-weight: bold;
+            font-size: 18px;
+            margin-left: 5px;
+        }
+
 
 
 
         .footer {
             margin-top: 80px;
             margin-left: 20px;
+            position: relative;
+            margin-bottom: 50px;
+        }
+        .footer p{
+            margin: 3px 0px 3px 0px;
+        }
+        .print{
+            position: absolute;
+            right: 80px;
+            bottom: 150px;
+            width: 10%;
+            border-radius: 12px;
+            border: 1px solid lightseagreen;
+            color: rgb(224, 48, 48);
+            font-weight: bold;
+            font-size: 18px;
+            background-color: rgb(255, 255, 255);
+            transition: 0.5s;
+            
+        }
+        .print:hover{
+            transform: scale(1.3);
+            cursor: pointer;
+            background-color: lightseagreen;
+            border: red;
+            transition: transform, 0.5s;
+
+        }
+        .iban,
+        .bic{
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+
+        @media print {
+
+            .details-input-style,
+            .invoice-details-print,
+            .table,
+            .tr,
+            .pos,
+            .description,
+            .menge,
+            .price,
+            .gesamt,
+            #menge-opt,
+            .summe,
+            .gesamtBetrag,
+            .iban,
+            .bic,
+            .name-end {
+                border: none;
+            }
+
+            #menge-opt {
+                margin-left: -20px;
+            }
+
+            .menge {
+                margin-left: -10px;
+            }
+
+            .delete {
+                display: none;
+            }
+
+            select {
+                -o-appearance: none;
+                -ms-appearance: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+            }
+
+            #addPos {
+                display: none;
+            }
+
+            .pos {
+                font-weight: bold;
+            }
+            .summe,
+            .gesamtBetrag{
+                margin-right: 1px;
+                
+            }
+            .invoice-details{
+                margin-right: -50px;
+            }
+            .print{
+                display: none;
+            }
+
+           
+        
+
         }
     </style>
     <script>
@@ -267,6 +424,14 @@
             }
         })
     </script>
+    <script>
+        
+        const printBtn = document.getElementsByClassName('print')[0];
+        printBtn.addEventListener('click',()=>{
+            window.print();
+        })
+    </script>
+    
 </body>
 
 
